@@ -3,6 +3,7 @@ package main
 import (
 	"testing"
 	"github.com/stretchr/testify/assert"
+	"fmt"
 )
 
 var testCases = []struct {
@@ -26,19 +27,9 @@ var testCases = []struct {
 		"two one-word strings",
 	},
 	{
-		`hello "end" world`,
-		[]string{"hello", `"end"`, "world"},
-		"three one-word strings, one in quotes",
-	},
-	{
-		`"hello world"`,
-		[]string{`"hello world"`},
-		"single two-word phrase",
-	},
-	{
-		`"hello world" they say`,
-		[]string{`"hello world"`, "they", "say"},
-		"two-word phrase and two single words",
+		`"Hello world," she said`,
+		[]string{`"Hello world,"`, "she", "said"},
+		"a phrase and two words",
 	},
 }
 
